@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: jarvis-bd-ai-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: APP_ACCESS_CODE
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5.5
+      - key: APP_ORIGINS
+        value: https://localhost,capacitor://localhost,http://localhost
